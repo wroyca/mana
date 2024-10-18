@@ -1,0 +1,13 @@
+// https://learn.microsoft.com/en-us/cpp/build/launch-vs-schema-reference-cpp?view=msvc-170
+
+{
+  "version": "0.2.1",
+  "configurations":
+  [
+    {
+      "type": "default",
+      "project": "mana\\mana.exe",
+      "name": "mana"
+    }
+  ]
+}

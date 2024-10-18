@@ -1,6 +1,17 @@
 libs =
 
-exe{mana}: {hxx ixx txx cxx}{**} $libs testscript
+exe{mana}: {hxx ixx txx cxx}{** -mana-win32 -mana-mingw32} \
+  $libs testscript
+
+exe{mana}: {cxx}{mana-win32}:   include = ($cxx.target.system == 'win32-msvc')
+exe{mana}: {cxx}{mana-mingw32}: include = ($cxx.target.system == 'mingw32')
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
-cxx.loptions =+ "-nostartfiles" "-Wl,-emana"
+
+switch $cxx.target.system
+{
+  case 'mingw32'
+  {
+    cxx.loptions =+ "-nostartfiles" "-Wl,-emana"
+  }
+}

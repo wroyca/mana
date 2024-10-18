@@ -1,0 +1,15 @@
+# By default bdep-init(1) configures projects being initialized for development.
+#
+# https://build2.org/build2/doc/build2-build-system-manual.xhtml#proj-config
+
+if ($config.mana.develop)
+{
+  switch $cxx.class
+  {
+    case 'msvc'
+    {
+      config.cc.coptions += /Zi
+      config.cc.loptions += /DEBUG:FULL
+    }
+  }
+}

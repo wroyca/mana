@@ -1,0 +1,39 @@
+// https://learn.microsoft.com/en-us/cpp/build/tasks-vs-json-schema-reference-cpp?view=msvc-170
+
+{
+  "version": "0.2.1",
+  "tasks":
+  [
+    {
+      "taskLabel": "build",
+      "type": "default",
+      "contextType": "build",
+      "command": "b",
+      "appliesTo": "*",
+      "output": "${workspaceRoot}\\mana\\mana.exe"
+    },
+
+    {
+      "taskLabel": "rebuild",
+      "type": "default",
+      "contextType": "rebuild",
+      "command": "b",
+      "appliesTo": "*",
+      "args": [
+        "clean",
+        "update"
+      ]
+    },
+
+    {
+      "taskLabel": "clean",
+      "type": "default",
+      "contextType": "clean",
+      "command": "b",
+      "appliesTo": "*",
+      "args": [
+        "clean"
+      ]
+    }
+  ]
+}

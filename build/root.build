@@ -11,6 +11,12 @@ ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
 
+# Pre-defined semantics to distinguish between development and consumption
+# builds.
+#
+config [bool] config.mana.develop ?= false
+source $src_root/build/config/mana/develop.build
+
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target

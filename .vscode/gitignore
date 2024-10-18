@@ -1,0 +1,6 @@
+*
+!.gitignore
+
+# Visual Studio Code project files.
+#
+!.settings.json

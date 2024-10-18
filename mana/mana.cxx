@@ -2,12 +2,10 @@ namespace mana
 {
   extern "C"
   {
-    int mana () __attribute__ ((naked));
-
     int
-    mana ()
+    main ()
     {
-      __asm ("ret");
+      return 0;
     }
   }
 }
