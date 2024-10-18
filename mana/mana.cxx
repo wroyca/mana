@@ -1,15 +1,13 @@
-#include <iostream>
-
-int
-main (int argc, char* argv[])
+namespace mana
 {
-  using namespace std;
+  extern "C"
+  {
+    int mana () __attribute__ ((naked));
 
-  if (argc < 2)
+    int
+    mana ()
     {
-      cerr << "error: missing name" << endl;
-      return 1;
+      __asm ("ret");
     }
-
-  cout << "Hello, " << argv[1] << '!' << endl;
+  }
 }
